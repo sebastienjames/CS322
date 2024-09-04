@@ -1,0 +1,10 @@
+(@main
+  (@main
+    0
+    %temp <- 7
+    rdi <- %temp
+    call allocate 1
+    %ar <- rax
+    return
+  )
+)

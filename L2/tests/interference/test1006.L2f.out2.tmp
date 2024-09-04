@@ -1,0 +1,4 @@
+%c Colored none %pi r12 r13 r14 r15 rbp rbx with
+%d Colored none %pi %r r12 r13 r14 r15 rbp rbx with
+%pi %c Colored %d none %r r12 r13 r14 r15 rbp rbx with
+%r Colored %d none %pi r12 r13 r14 r15 rbp rbx with

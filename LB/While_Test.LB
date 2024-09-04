@@ -1,0 +1,17 @@
+void main(){
+    int64 a,b,c
+    a<-1
+    :true
+    a<-a+1
+    b<-1
+        while(b<2):true2 :false2
+        c<-0
+        :true2
+            b<-b+1
+        continue
+    while(a<5) :true :false
+    :false
+    return
+    :false2
+    return
+}

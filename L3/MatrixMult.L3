@@ -1,0 +1,140 @@
+define @main(){
+    %numRowA<-call input()
+    %trueNumRowA1<-%numRowA-1
+    %trueNumRowA<-%trueNumRowA1>>1
+    //call print(%numRowA)
+    %numColA<-call input()
+    %trueNumColA1<-%numColA-1
+    %trueNumColA<-%trueNumColA1>>1
+    //call print(%numColA)
+    %sizeA <- %trueNumRowA*%trueNumColA
+    %truesizeA1 <- %sizeA<<1
+    %truesizeA <- %truesizeA1+1
+    //call print(%truesizeA)
+    %fullSize<-%sizeA*4
+    %fullSizeT<-%fullSize+1
+    //call print(%fullSizeT)
+    %fullSize<-%fullSize+1
+    %truefullsize1 <- %fullSize<<1
+    %truefullsize <- %truefullsize1+1
+    //call print (%fullSize)
+    %Matrix_Start<-call allocate(%truefullsize,0)
+    %i <- 3
+    %j<-3
+    //call print(%i)
+  
+    //Initialize Array
+    :startLoopA
+    %Item<-call input()
+    //call print(%Item)
+    %Mult<-%j*8
+    %CurrentPos<-%Matrix_Start+%Mult
+    store %CurrentPos <- %Item
+    //%test <- load %CurrentPos
+    //call print(%test)
+    %i<-%i+2
+    %j<-%j+2
+    %Condition<- %i<=%truesizeA
+    br %Condition :startLoopA
+
+    %numRowB<-call input()
+    %trueNumRowB1<-%numRowB-1
+    %trueNumRowB<-%trueNumRowB1>>1
+    //call print(%numRowB)
+    %numColB<-call input()
+    %trueNumColB1<-%numColB-1
+    %trueNumColB<-%trueNumColB1>>1
+    //call print(%numColB)
+    %sizeB <- %trueNumRowB*%trueNumColB
+    %truesizeB1 <- %sizeB<<1
+    %truesizeB <- %truesizeB1+1
+
+    %i<-3
+    //Initialize Rest of Array
+    :startLoopB
+    %Item<-call input()
+    //call print(%Item)
+    %Mult<-%j*8
+    %CurrentPos<-%Matrix_Start+%Mult
+    store %CurrentPos <- %Item
+    //%test <- load %CurrentPos
+    //call print(%test)
+    %i<-%i+2
+    %j<-%j+2
+    %Condition<- %i<=%truesizeB
+    br %Condition :startLoopB
+
+    %i<-3
+    :testLoopAll
+        %Mlt <- %i*8
+        %Pos <- %Matrix_Start+%Mlt
+        %test <- load %Pos
+        //call print(%test)
+        %i <- %i+2
+        %Condition1 <- %i<=%fullSize
+        br %Condition1 :testLoopAll
+
+    
+    call print(%numRowA)
+    call print(%numColB)
+
+    //Multiply A Row Against A Column
+    %k <- 3
+    %A_Buffer<-3
+    %B_Buffer<-%truesizeA+2
+    :OuterLoop
+    %j<-3
+    :MiddleLoop
+        %APos<-%A_Buffer
+        %BPos<-%B_Buffer
+        %BigAnswer<-0
+        %i<-3
+        :InnerLoop
+            //Get A Number
+            %MltA <- %APos*8
+            %PosA <- %Matrix_Start+%MltA
+            %NumA <- load %PosA
+            %NumA_Adjusted<-%NumA-1
+            %NumA_Adjusted<-%NumA_Adjusted>>1
+            //call print(%NumA)
+
+
+            //Get B Number
+            %MltB <- %BPos*8
+            %PosB <- %Matrix_Start+%MltB
+            %NumB <- load %PosB
+            %NumB_Adjusted<-%NumB-1
+            %NumB_Adjusted<-%NumB_Adjusted>>1
+            //call print(%NumB)
+
+
+            //Get Answer
+            %AnswerUnfiltered<-%NumA_Adjusted*%NumB_Adjusted
+            %Answer<-%AnswerUnfiltered<<1
+            %AnswerFiltered<-%Answer+1
+            //call print(%AnswerFiltered)
+
+            //Update BigAnswer
+            %BigAnswer<-%BigAnswer+%AnswerFiltered
+            //Update Counters
+            %i <- %i + 2
+            %APos <- %APos + 2
+            %BIncease <- %trueNumColB * 2
+            %BPos <- %BPos + %BIncease
+            %Condition <- %i<=%numColA
+            br %Condition :InnerLoop
+        //go to next comlumn
+        %B_Buffer<-%B_Buffer+2
+        %BigAnswer<-%BigAnswer-2
+        call print(%BigAnswer)
+        %j<-%j+2
+        %Condition2 <- %j<=%numColB
+        br %Condition2 :MiddleLoop
+    %k <- %k+2
+    %A_Buffer<-%APos
+    %B_Buffer<-%truesizeA+2
+    %Condition3 <- %k<=%numRowA
+    br %Condition3 :OuterLoop
+
+    return
+}

@@ -1,0 +1,2 @@
+%radius Colored none r10 r11 r12 r13 r14 r15 r8 r9 rax rbp rbx rcx rdi rdx rsi %value with
+%value Colored none r12 r13 r14 r15 %radius rbp rbx with

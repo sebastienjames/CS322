@@ -1,0 +1,17 @@
+void main ( ){
+
+  int64[] a
+  int64 i
+  a <- new Array(10)
+  i <- 1
+
+  :loop
+  a[i] <- 999
+  i <- i + 1
+  int64 c
+  c <- i < 999
+  br c :loop :done
+  :done
+  return
+
+}

@@ -1,0 +1,110 @@
+define void @main(){
+  //Variable Making
+  :entry
+  int64 %Size
+  int64 %Encoded_Size
+  int64[] %v
+  int64 %i
+  int64 %j
+  int64 %Item
+  int64 %LoopCondition
+
+  %Size<-call input() 
+  %Encoded_Size<-%Size<<1
+  %Encoded_Size<-%Encoded_Size+1
+  %v<-new Array(%Encoded_Size)
+  //%v[1]<-1
+  %i <- 3
+  %j <- 0
+  br :startLoop
+  //Initialize Array
+  :startLoop
+  %Item<-call input()
+  %v[%j]<-%Item 
+  //call print(%Item)
+  %i<-%i+2
+  %j<-%j+1
+  %LoopCondition<- %i <= %Size
+  br %LoopCondition :startLoop :endLoop
+  :endLoop
+  
+ 
+  //FUCNTION TIME
+  %i <-3
+  br :startLoop2
+  :startLoop2
+  call @findSmallest(%v,%Size)
+  %i<-%i+2
+  %LoopCondition <- %i <= %Size 
+  br %LoopCondition :startLoop2 :endLoop2
+  :endLoop2
+  return
+}
+
+define void @findSmallest(int64[] %p1, int64 %p2){
+  :entry
+  int64[] %v
+  int64 %Siz
+  int64 %k
+  int64 %l
+  int64 %Smallest
+  int64 %Current
+  int64 %Condition
+  int64 %Condition1
+  int64 %Condition2
+  int64 %Condition3
+
+
+  %v<-%p1
+  %Siz<-%p2
+
+  %k <- 3
+  %l <- 0
+  %Smallest <-0 
+  br :startLoopToFindSmallest
+  :startLoopToFindSmallest
+  %Current <- %v[%l]
+  // If statement
+
+  %Condition1 <- %Current=0
+  %Condition2 <- %Smallest=0
+  %Condition3 <- %Smallest<=%Current
+  br %Condition1 :goToEnd :nextCheck
+  :nextCheck
+  br %Condition2 :adjustSmallest :nextCheck2
+  :nextCheck2
+  br %Condition3 :goToEnd :adjustSmallest
+  :adjustSmallest
+  %Smallest <- %Current
+  br :goToEnd
+  :goToEnd
+  %k<-%k+2
+  %l<-%l+1
+  %Condition <- %k <= %Siz 
+  br %Condition :startLoopToFindSmallest :endFindSmallestLoop
+  :endFindSmallestLoop
+
+  call print (%Smallest)
+  %k <- 3  
+  %l <- 0
+  br :startLoopToDestroySmallest
+  :startLoopToDestroySmallest
+  %Current <- %v[%l]
+  
+  //If statement
+  %Condition1 <- %Current=%Smallest
+  br %Condition1 :foundValueToDestroy :skipBig
+  :foundValueToDestroy
+  %v[%l] <- 0 //LOAD smol
+  %Current<-%v[%l]
+  //call print(%Current)
+  return
+  :skipBig
+  %k<-%k+2
+  %l<-%l+1
+  %Condition <- %k <= %Siz
+  br %Condition :startLoopToDestroySmallest :break
+  :break  
+  return
+}
+

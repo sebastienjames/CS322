@@ -1,0 +1,5 @@
+%factor Colored none %r r12 r13 r14 r15 %r2 %r3 rbp rbx %v with
+%r2 Colored %factor none %r r12 r13 r14 r15 rbp rbx with
+%r3 Colored %factor none %r r12 r13 r14 r15 rbp rbx with
+%r Colored %factor none r12 r13 r14 r15 %r2 %r3 rbp rbx with
+%v Colored %factor none r12 r13 r14 r15 rbp rbx with

@@ -1,0 +1,148 @@
+void main(){
+    int64 numRowA,trueNumRowA,numColA,trueNumColA,sizeA,truesizeA,fullSize,truefullsize
+    int64[] Matrix
+    int64 i,j,k
+    int64 Item
+
+    int64 numRowB,trueNumRowB,numColB, trueNumColB, sizeB, truesizeB
+
+    int64 APos,A_Buffer,BPos,B_Buffer,NumA,NumA_Adjusted,NumB,NumB_Adjusted
+    int64 AnswerUnfiltered,AnswerFiltered,BigAnswer,BIncease
+
+    numRowA<-input()
+    trueNumRowA<-numRowA
+
+    numColA<-input()
+    trueNumColA<-numColA
+
+    sizeA <- trueNumRowA*trueNumColA
+    truesizeA <- sizeA
+
+    fullSize<-sizeA*4
+    //fullSizeT<-fullSize+1
+    //print(fullSizeT)
+    fullSize<-fullSize+1
+    truefullsize <- fullSize
+    //print (fullSize)
+    Matrix<-new Array(truefullsize)
+    i <- 1
+    j <- 1
+    k <-0
+    //print(i)
+  
+    //Initialize Array
+    while (i<=truesizeA) :startLoopA :endLoopA
+    :startLoopA
+    Item<-input()
+    //print(Item)
+    Matrix[k] <- Item
+    i<-i+1
+    j<-j+1
+    k<-k+1
+    continue
+    :endLoopA
+
+
+    numRowB<-input()
+    trueNumRowB<-numRowB
+    //print(numRowB)
+    numColB<-input()
+    trueNumColB<-numColB
+    //print(numColB)
+    sizeB <- trueNumRowB*trueNumColB
+    truesizeB <- sizeB
+
+    i<-1
+    while (i<=truesizeB) :startLoopB :endLoopB
+    //Initialize Rest of Array
+    :startLoopB
+    Item<-input()
+    //print(Item)
+    Matrix[k] <- Item
+    i<-i+1
+    j<-j+1
+    k<-k+1
+    continue
+    :endLoopB
+
+    //i<-1
+    //br :testLoopAll
+    //:testLoopAll
+        //Mlt <- i*8
+        //Pos <- Matrix_Start+Mlt
+        //test <- load Pos
+        //print(test)
+        //i <- i+2
+        //Condition1 <- i<=fullSize
+        //br Condition1 :testLoopAll :endTestLoopAll
+    //:endTestLoopAll
+
+    
+    print(numRowA)
+    print(numColB)
+
+
+    //Multiply A Row Against A Column
+    k <- 1
+    A_Buffer<-0
+    B_Buffer<-sizeA
+    while (k<=numRowA) :OuterLoop :endLoopC
+    :OuterLoop
+        j<-1
+        while (j<=numColB) :MiddleLoop :nextLoop2
+        :MiddleLoop
+            APos<-A_Buffer
+            BPos<-B_Buffer
+            BigAnswer<-0
+            i<-1
+            while (i<=numColA) :InnerLoop :nextLoop
+            :InnerLoop
+                //Get A Number
+                NumA <- Matrix[APos]
+                NumA_Adjusted<-NumA
+                //print(NumA)
+
+
+                //Get B Number
+                NumB <- Matrix[BPos]
+                NumB_Adjusted<-NumB
+                //print(NumB)
+
+
+                //Get Answer
+                AnswerUnfiltered<-NumA_Adjusted*NumB_Adjusted
+                AnswerFiltered<-AnswerUnfiltered
+                //print(AnswerFiltered)
+
+                //Update BigAnswer
+                BigAnswer<-BigAnswer+AnswerFiltered
+                //Update Counters
+                i <- i + 1
+                APos <- APos + 1
+                BIncease <- trueNumColB
+                BPos <- BPos + BIncease
+                //Condition <- i<=numColA
+                //br Condition :InnerLoop :nextLoop
+                continue
+            //go to next comlumn
+            :nextLoop
+            //print(12343215)
+            B_Buffer<-B_Buffer+1
+            // BigAnswer<-BigAnswer-2
+            print(BigAnswer)
+            j<-j+1
+            //Condition2 <- j<=numColB
+            //br Condition2 :MiddleLoop :nextLoop2
+            continue
+        :nextLoop2
+        //print(9999999)
+        k <- k+1
+        A_Buffer<-APos
+        B_Buffer<-sizeA
+        //Condition3 <- k<=numRowA
+        //br Condition3 :OuterLoop :endLoopC
+        continue
+    :endLoopC
+
+    return
+}

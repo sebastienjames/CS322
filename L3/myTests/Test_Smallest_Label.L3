@@ -1,0 +1,12 @@
+define @main(){
+    %Var1<-5
+    %Var2<-3 + %Var1
+    %Var3<-%Var1<=%Var2
+    %Var4<-load %Var1
+    store %Var2<-%Var1
+    br :Label
+    br %Var3 :Label
+    :Label
+    :Label2
+    return
+}

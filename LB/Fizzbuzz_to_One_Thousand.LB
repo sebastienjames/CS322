@@ -1,0 +1,43 @@
+void main(){
+  //Variable Making
+  int64 current,end,threeCount,fiveCount
+  int64 three_five_msg, three_msg, five_msg
+  current<-1
+  threeCount<-1
+  fiveCount<-1
+  three_msg<-333
+  three_five_msg<-33355555
+  five_msg<-55555
+  end<-1000
+  while(current<=end):loop :endLoop
+    :loop
+    if (threeCount=3) :three_Found :three_NotFound
+    :three_Found
+      threeCount<-1
+      if(fiveCount=5) :three_five_Found :three_five_NotFound
+      :three_five_Found
+        fiveCount<-1
+        print(three_five_msg)
+        current<-current+1
+        continue
+      :three_five_NotFound
+        fiveCount<-fiveCount+1
+        print(three_msg)
+        current<-current+1
+        continue
+    :three_NotFound
+      threeCount<-threeCount+1
+      if(fiveCount=5) :five_Found :five_NotFound
+      :five_Found
+        fiveCount<-1
+        print(five_msg)
+        current<-current+1
+        continue
+      :five_NotFound
+        fiveCount<-fiveCount+1
+        print(current)
+        current<-current+1
+        continue
+  :endLoop
+  return
+}

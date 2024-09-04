@@ -1,0 +1,119 @@
+void main(){
+  //Variable Making
+  :entry
+  int64 Size
+  int64 Encoded_Size
+  int64[] v
+  int64 i
+  int64 j
+  int64 Item
+  int64 LoopCondition
+
+  Size<-input() 
+  Encoded_Size<-Size
+  v<-new Array(Encoded_Size)
+  //v[1]<-1
+  i <- 1
+  j <- 0
+  br :startLoop
+  //Initialize Array
+  :startLoop
+  Item<-input()
+  v[j]<-Item 
+  //print(Item)
+  i<-i+1
+  j<-j+1
+  LoopCondition<- i <= Size
+  br LoopCondition :startLoop :endLoop
+  :endLoop
+  
+ 
+  //FUCNTION TIME
+  i <-1
+  br :startLoop2
+  :startLoop2
+  findSmallest(v,Size)
+  i<-i+1
+  LoopCondition <- i <= Size 
+  br LoopCondition :startLoop2 :endLoop2
+  :endLoop2
+  return
+}
+
+void findSmallest(int64[] p1, int64 p2){
+  :entry
+  int64[] v
+  int64 Siz
+  int64 k
+  int64 l
+  int64 Smallest
+  int64 Current
+  int64 Condition
+  int64 Condition1
+  int64 Condition2
+  int64 Condition3
+  int64 Condition4
+  code null
+
+
+  v<-p1
+  Siz<-p2
+
+  k <- 1
+  l <- 0
+  Smallest <-null 
+  br :startLoopToFindSmallest
+  :startLoopToFindSmallest
+  Current <- v[l]
+  // If statement
+
+  Condition1 <- Current=null
+  Condition2 <- Smallest=null
+  Condition3 <- Smallest<=Current
+  //Condition4 <- Current=0
+  //br Condition4 :adjustSmallest :nextCheck0
+  //:nextCheck0
+  br Condition1 :goToEnd :nextCheck
+  :nextCheck
+  br Condition2 :adjustSmallest :nextCheck2
+  :nextCheck2
+  br Condition3 :goToEnd :adjustSmallest
+  :adjustSmallest
+  Smallest <- Current
+  br :goToEnd
+  :goToEnd
+  k<-k+1
+  l<-l+1
+  Condition <- k <= Siz 
+  br Condition :startLoopToFindSmallest :endFindSmallestLoop
+  :endFindSmallestLoop
+
+  //Condition4 <- Smallest=null
+  //br Condition4 :break
+  //br :goNext
+  //:goNext
+  //print (Smallest)
+  k <- 1
+  l <- 0
+  br :startLoopToDestroySmallest
+  :startLoopToDestroySmallest
+  Current <- v[l]
+  
+  //If statement
+  Condition1 <- Current=Smallest
+  br Condition1 :foundValueToDestroy :skipBig
+  :foundValueToDestroy
+  //v[l] <- null //LOAD smol
+  Current<-v[l]
+  v[l] <- null //LOAD smol
+  print(Current)
+  return
+  :skipBig
+  k<-k+1
+  l<-l+1
+  Condition <- k <= Siz
+  br Condition :startLoopToDestroySmallest :break
+  :break  
+  return
+}
+

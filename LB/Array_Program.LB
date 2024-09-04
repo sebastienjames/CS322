@@ -1,0 +1,78 @@
+void main(){
+  //Variable Making
+  int64 Size, Encoded_Size, i, j, Item
+  int64[] v
+
+  Size<-input() 
+  Encoded_Size<-Size
+  v<-new Array(Encoded_Size)
+
+  i <- 1
+  j <- 0
+  while (i<=Size) :startLoop :endLoop
+    :startLoop
+    Item<-input()
+    v[j]<-Item 
+    //print(Item)
+    i<-i+1
+    j<-j+1
+    continue
+  :endLoop
+  
+  ////FUCNTION TIME
+  i <-1
+  while (i<=Size) :startLoop2 :endLoop2
+    :startLoop2
+    findSmallest(v,Size)
+    i<-i+1
+    continue
+  :endLoop2
+  return
+}
+
+void findSmallest(int64[] p1, int64 p2){
+  int64[] v
+  int64 Siz,k,l,Smallest,Current
+  code null
+
+  v<-p1
+  Siz<-p2
+
+  k <- 1
+  l <- 0
+  Smallest <-null 
+  while (k<=Siz) :startLoopToFindSmallest :endFindSmallestLoop
+    :startLoopToFindSmallest
+    Current <- v[l]
+    // If statement
+    if(Current=null) :goToEnd :nextCheck
+    :nextCheck
+    if(Smallest=null) :adjustSmallest :nextCheck2
+    :nextCheck2
+    if(Smallest<=Current) :goToEnd :adjustSmallest
+    :adjustSmallest
+      Smallest <- Current
+    :goToEnd
+      k<-k+1
+      l<-l+1
+      continue
+  :endFindSmallestLoop
+  print (Smallest)
+  k <- 1
+  l <- 0
+  while (k<=Siz) :startLoopToDestroySmallest :break
+    :startLoopToDestroySmallest
+    Current <- v[l]
+    //If statement
+    if(Current=Smallest) :foundValueToDestroy :skipBig
+    :foundValueToDestroy
+      v[l] <- null //LOAD smol
+      break
+    :skipBig
+      k<-k+1
+      l<-l+1
+      continue
+  :break  
+  return
+}
+

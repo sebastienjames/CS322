@@ -1,0 +1,7 @@
+(@main
+ (@main
+  0 1
+  
+  rax += 2
+  return))
+

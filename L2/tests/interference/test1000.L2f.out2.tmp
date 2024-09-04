@@ -1,0 +1,11 @@
+%cond Colored %i none r12 r13 r14 r15 rbp rbx %thing with
+%i Colored %cond %newVar0 %newVar1 %newVar3 none r12 r13 r14 r15 rbp rbx %thing with
+%memmy Colored %newVar4 %newVar5 %newVar6 %newVar7 none r10 r11 r12 r13 r14 r15 r8 r9 rax rbp rbx rcx rdi rdx rsi %thing with
+%newVar0 Colored %i %newVar3 none r12 r13 r14 r15 rbp rbx %thing with
+%newVar1 Colored %i none r12 r13 r14 r15 rbp rbx %thing with
+%newVar3 Colored %i %newVar0 none r12 r13 r14 r15 rbp rbx %thing with
+%newVar4 Colored %memmy none r12 r13 r14 r15 rbp rbx with
+%newVar5 Colored %memmy none r12 r13 r14 r15 rbp rbx with
+%newVar6 Colored %memmy none r12 r13 r14 r15 rbp rbx %thing with
+%newVar7 Colored %memmy none r12 r13 r14 r15 rbp rbx %thing with
+%thing Colored %cond %i %memmy %newVar0 %newVar1 %newVar3 %newVar6 %newVar7 none r12 r13 r14 r15 rbp rbx with

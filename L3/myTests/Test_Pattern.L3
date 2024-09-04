@@ -1,0 +1,13 @@
+define @main(){
+    %Var3 <- 8
+    store %Var3 <- 4
+    %Var4 <- load %Var3
+    %Var5 <- 3 > 2
+    br :label
+    br %Var5 :label2
+    %Var2 <- 3 = 4
+    %Var1 <- 1 + 3
+    :label
+    :label2
+    return %Var1
+}

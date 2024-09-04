@@ -1,0 +1,467 @@
+(@main
+    (@main
+    0
+    :new_label24_global_9
+    %a_1 <- 0
+    %l1_1 <- 1
+    %c1_1 <- 1
+    %l2_1 <- 1
+    %c2_1 <- 1
+    %l3_1 <- 1
+    %c3_1 <- 1
+    %sum_1 <- 1
+    %tmp_1 <- 1
+    %hold_0 <- 1
+    %hold_1 <- 11
+    %hold_1 >>= 1
+    %hold_0 *= %hold_1
+    %hold_2 <- 13
+    %hold_2 >>= 1
+    %hold_0 *= %hold_2
+    %hold_3 <- 15
+    %hold_3 >>= 1
+    %hold_0 *= %hold_3
+    %hold_0 <<= 1
+    %hold_0 += 1
+    %hold_0 += 6
+    mem rsp -8 <- :allocate0_ret
+    rsi <- 1
+    rdi <- %hold_0
+    call allocate 2
+    :allocate0_ret
+    %a_1 <- rax
+    %hold_1 <- %a_1
+    %hold_1 += 8
+    mem %hold_1 0 <- 11
+    %hold_2 <- %a_1
+    %hold_2 += 16
+    mem %hold_2 0 <- 13
+    %hold_3 <- %a_1
+    %hold_3 += 24
+    mem %hold_3 0 <- 15
+    %address <- 0
+    %address *= 8
+    %address += 8
+    %address += %a_1
+    %l1_1 <- mem %address 0
+    %address <- 1
+    %address *= 8
+    %address += 8
+    %address += %a_1
+    %l2_1 <- mem %address 0
+    %address <- 2
+    %address *= 8
+    %address += 8
+    %address += %a_1
+    %l3_1 <- mem %address 0
+    %c1_1 <- %l1_1
+    %c2_1 <- %l2_1
+    %c3_1 <- %l3_1
+    %sum_1 <- 1
+    :new_label24_global_10
+    %newVar0 <- 1
+    %newVar0 <- %c1_1
+    %newVar0 >>= 1
+    %newVar1 <- 1
+    %newVar1 <- 3
+    %newVar1 >>= 1
+    %c1_1 <- %newVar0
+    %c1_1 -= %newVar1
+    %c1_1 <<= 1
+    %c1_1 += 1
+    %newVar2 <- 1
+    %newVar3 <- 1
+    %newVar3 <- %c1_1
+    %newVar3 >>= 1
+    %newVar4 <- 1
+    %newVar5 <- 1
+    %newVar5 <- 1
+    %newVar5 >>= 1
+    %newVar6 <- 1
+    %newVar7 <- 1
+    %newVar7 <- 1
+    %newVar7 >>= 1
+    %newVar30 <- 43
+    %newVar31 <- 1
+    %newVar32 <- 1
+    %newVar33 <- 1
+    %newVar34 <- %a_1 = 0
+    cjump 1 = %newVar34 :new_label24_global_11
+    goto :new_label24_global_12
+    :new_label24_global_12
+    %newVar32 <- 1
+    %address <- 0
+    %address *= 8
+    %address += 8
+    %address += %a_1
+    %newVar35 <- mem %address 0
+    %newVar31 <- %newVar35
+    %newVar35 >>= 1
+    %newVar33 <- %newVar3
+    %newVar33 <<= 1
+    %newVar33 += 1
+    %newVar36 <- %newVar3 < %newVar35
+    cjump 1 = %newVar36 :new_label24_global_13
+    goto :new_label24_global_14
+    :new_label24_global_14
+    mem rsp -8 <- :tensor_error1_ret
+    rcx <- %newVar33
+    rdx <- %newVar31
+    rsi <- %newVar32
+    rdi <- %newVar30
+    call tensor-error 4
+    :tensor_error1_ret
+    :new_label24_global_15
+    %a_1_1 <- %a_1
+    %a_1_1 += 16
+    %hold1 <- mem %a_1_1 0
+    %hold1 >>= 1
+    %a_1_2 <- %a_1
+    %a_1_2 += 24
+    %hold2 <- mem %a_1_2 0
+    %hold2 >>= 1
+    %newVar0 <- %newVar7
+    %newVar1 <- %newVar5
+    %newVar1 *= %hold2
+    %hold2_hold1 <- %hold2
+    %hold2_hold1 *= %hold1
+    %newVar2 <- %newVar3
+    %newVar2 *= %hold2_hold1
+    %index_poop <- %newVar2
+    %index_poop += %newVar0
+    %index_poop += %newVar1
+    %index_poop *= 8
+    %index_poop += 32
+    %temppoop <- %a_1
+    %temppoop+= %index_poop
+    %index_poop <- %temppoop
+    %tmp_1 <- mem %index_poop 0
+    %newVar8 <- 1
+    %newVar8 <- %tmp_1
+    %newVar8 >>= 1
+    %newVar9 <- 1
+    %newVar9 <- %sum_1
+    %newVar9 >>= 1
+    %sum_1 <- %newVar8
+    %sum_1 += %newVar9
+    %sum_1 <<= 1
+    %sum_1 += 1
+    :new_label24_global_16
+    %newVar10 <- 1
+    %newVar10 <- %c2_1
+    %newVar10 >>= 1
+    %newVar11 <- 1
+    %newVar11 <- 3
+    %newVar11 >>= 1
+    %c2_1 <- %newVar10
+    %c2_1 -= %newVar11
+    %c2_1 <<= 1
+    %c2_1 += 1
+    %newVar12 <- 1
+    %newVar13 <- 1
+    %newVar13 <- 1
+    %newVar13 >>= 1
+    %newVar14 <- 1
+    %newVar15 <- 1
+    %newVar15 <- %c2_1
+    %newVar15 >>= 1
+    %newVar16 <- 1
+    %newVar17 <- 1
+    %newVar17 <- 1
+    %newVar17 >>= 1
+    %newVar41 <- 51
+    %newVar42 <- 1
+    %newVar43 <- 1
+    %newVar44 <- 1
+    %newVar45 <- %a_1 = 0
+    cjump 1 = %newVar45 :new_label24_global_17
+    goto :new_label24_global_18
+    :new_label24_global_18
+    %newVar43 <- 1
+    %address <- 0
+    %address *= 8
+    %address += 8
+    %address += %a_1
+    %newVar46 <- mem %address 0
+    %newVar42 <- %newVar46
+    %newVar46 >>= 1
+    %newVar44 <- %newVar13
+    %newVar44 <<= 1
+    %newVar44 += 1
+    %newVar47 <- %newVar13 < %newVar46
+    cjump 1 = %newVar47 :new_label24_global_19
+    goto :new_label24_global_20
+    :new_label24_global_20
+    mem rsp -8 <- :tensor_error2_ret
+    rcx <- %newVar44
+    rdx <- %newVar42
+    rsi <- %newVar43
+    rdi <- %newVar41
+    call tensor-error 4
+    :tensor_error2_ret
+    :new_label24_global_21
+    %a_1_1 <- %a_1
+    %a_1_1 += 16
+    %hold1 <- mem %a_1_1 0
+    %hold1 >>= 1
+    %a_1_2 <- %a_1
+    %a_1_2 += 24
+    %hold2 <- mem %a_1_2 0
+    %hold2 >>= 1
+    %newVar0 <- %newVar17
+    %newVar1 <- %newVar15
+    %newVar1 *= %hold2
+    %hold2_hold1 <- %hold2
+    %hold2_hold1 *= %hold1
+    %newVar2 <- %newVar13
+    %newVar2 *= %hold2_hold1
+    %index_poop <- %newVar2
+    %index_poop += %newVar0
+    %index_poop += %newVar1
+    %index_poop *= 8
+    %index_poop += 32
+    %temppoop <- %a_1
+    %temppoop+= %index_poop
+    %index_poop <- %temppoop
+    %tmp_1 <- mem %index_poop 0
+    %newVar18 <- 1
+    %newVar18 <- %tmp_1
+    %newVar18 >>= 1
+    %newVar19 <- 1
+    %newVar19 <- %sum_1
+    %newVar19 >>= 1
+    %sum_1 <- %newVar18
+    %sum_1 += %newVar19
+    %sum_1 <<= 1
+    %sum_1 += 1
+    :new_label24_global_22
+    %newVar20 <- 1
+    %newVar20 <- %c3_1
+    %newVar20 >>= 1
+    %newVar21 <- 1
+    %newVar21 <- 3
+    %newVar21 >>= 1
+    %c3_1 <- %newVar20
+    %c3_1 -= %newVar21
+    %c3_1 <<= 1
+    %c3_1 += 1
+    %newVar22 <- 1
+    %newVar23 <- 1
+    %newVar23 <- 1
+    %newVar23 >>= 1
+    %newVar24 <- 1
+    %newVar25 <- 1
+    %newVar25 <- 1
+    %newVar25 >>= 1
+    %newVar26 <- 1
+    %newVar27 <- 1
+    %newVar27 <- %c3_1
+    %newVar27 >>= 1
+    %newVar52 <- 59
+    %newVar53 <- 1
+    %newVar54 <- 1
+    %newVar55 <- 1
+    %newVar56 <- %a_1 = 0
+    cjump 1 = %newVar56 :new_label24_global_23
+    goto :new_label24_global_24
+    :new_label24_global_24
+    %newVar54 <- 1
+    %address <- 0
+    %address *= 8
+    %address += 8
+    %address += %a_1
+    %newVar57 <- mem %address 0
+    %newVar53 <- %newVar57
+    %newVar57 >>= 1
+    %newVar55 <- %newVar23
+    %newVar55 <<= 1
+    %newVar55 += 1
+    %newVar58 <- %newVar23 < %newVar57
+    cjump 1 = %newVar58 :new_label24_global_25
+    goto :new_label24_global_26
+    :new_label24_global_26
+    mem rsp -8 <- :tensor_error3_ret
+    rcx <- %newVar55
+    rdx <- %newVar53
+    rsi <- %newVar54
+    rdi <- %newVar52
+    call tensor-error 4
+    :tensor_error3_ret
+    :new_label24_global_27
+    %a_1_1 <- %a_1
+    %a_1_1 += 16
+    %hold1 <- mem %a_1_1 0
+    %hold1 >>= 1
+    %a_1_2 <- %a_1
+    %a_1_2 += 24
+    %hold2 <- mem %a_1_2 0
+    %hold2 >>= 1
+    %newVar0 <- %newVar27
+    %newVar1 <- %newVar25
+    %newVar1 *= %hold2
+    %hold2_hold1 <- %hold2
+    %hold2_hold1 *= %hold1
+    %newVar2 <- %newVar23
+    %newVar2 *= %hold2_hold1
+    %index_poop <- %newVar2
+    %index_poop += %newVar0
+    %index_poop += %newVar1
+    %index_poop *= 8
+    %index_poop += 32
+    %temppoop <- %a_1
+    %temppoop+= %index_poop
+    %index_poop <- %temppoop
+    %tmp_1 <- mem %index_poop 0
+    %newVar28 <- 1
+    %newVar28 <- %tmp_1
+    %newVar28 >>= 1
+    %newVar29 <- 1
+    %newVar29 <- %sum_1
+    %newVar29 >>= 1
+    %sum_1 <- %newVar28
+    %sum_1 += %newVar29
+    %sum_1 <<= 1
+    %sum_1 += 1
+    :new_label24_global_28
+    mem rsp -8 <- :print4_ret
+    rdi <- %sum_1
+    call print 1
+    :print4_ret
+    return
+    :new_label24_global_25
+    %newVar54 <- 3
+    %address <- 1
+    %address *= 8
+    %address += 8
+    %address += %a_1
+    %newVar59 <- mem %address 0
+    %newVar53 <- %newVar59
+    %newVar59 >>= 1
+    %newVar55 <- %newVar25
+    %newVar55 <<= 1
+    %newVar55 += 1
+    %newVar60 <- %newVar25 < %newVar59
+    cjump 1 = %newVar60 :new_label24_global_29
+    goto :new_label24_global_26
+    :new_label24_global_29
+    %newVar54 <- 5
+    %address <- 2
+    %address *= 8
+    %address += 8
+    %address += %a_1
+    %newVar61 <- mem %address 0
+    %newVar53 <- %newVar61
+    %newVar61 >>= 1
+    %newVar55 <- %newVar27
+    %newVar55 <<= 1
+    %newVar55 += 1
+    %newVar62 <- %newVar27 < %newVar61
+    cjump 1 = %newVar62 :new_label24_global_30
+    goto :new_label24_global_26
+    :new_label24_global_30
+    goto :new_label24_global_27
+    :new_label24_global_23
+    mem rsp -8 <- :tensor_error5_ret
+    rdi <- %newVar52
+    call tensor-error 1
+    :tensor_error5_ret
+    :new_label24_global_31
+    mem rsp -8 <- :tensor_error6_ret
+    rdx <- %newVar55
+    rsi <- %newVar53
+    rdi <- %newVar52
+    call tensor-error 3
+    :tensor_error6_ret
+    goto :new_label24_global_26
+    :new_label24_global_19
+    %newVar43 <- 3
+    %address <- 1
+    %address *= 8
+    %address += 8
+    %address += %a_1
+    %newVar48 <- mem %address 0
+    %newVar42 <- %newVar48
+    %newVar48 >>= 1
+    %newVar44 <- %newVar15
+    %newVar44 <<= 1
+    %newVar44 += 1
+    %newVar49 <- %newVar15 < %newVar48
+    cjump 1 = %newVar49 :new_label24_global_32
+    goto :new_label24_global_20
+    :new_label24_global_32
+    %newVar43 <- 5
+    %address <- 2
+    %address *= 8
+    %address += 8
+    %address += %a_1
+    %newVar50 <- mem %address 0
+    %newVar42 <- %newVar50
+    %newVar50 >>= 1
+    %newVar44 <- %newVar17
+    %newVar44 <<= 1
+    %newVar44 += 1
+    %newVar51 <- %newVar17 < %newVar50
+    cjump 1 = %newVar51 :new_label24_global_33
+    goto :new_label24_global_20
+    :new_label24_global_33
+    goto :new_label24_global_21
+    :new_label24_global_17
+    mem rsp -8 <- :tensor_error7_ret
+    rdi <- %newVar41
+    call tensor-error 1
+    :tensor_error7_ret
+    :new_label24_global_34
+    mem rsp -8 <- :tensor_error8_ret
+    rdx <- %newVar44
+    rsi <- %newVar42
+    rdi <- %newVar41
+    call tensor-error 3
+    :tensor_error8_ret
+    goto :new_label24_global_20
+    :new_label24_global_13
+    %newVar32 <- 3
+    %address <- 1
+    %address *= 8
+    %address += 8
+    %address += %a_1
+    %newVar37 <- mem %address 0
+    %newVar31 <- %newVar37
+    %newVar37 >>= 1
+    %newVar33 <- %newVar5
+    %newVar33 <<= 1
+    %newVar33 += 1
+    %newVar38 <- %newVar5 < %newVar37
+    cjump 1 = %newVar38 :new_label24_global_35
+    goto :new_label24_global_14
+    :new_label24_global_35
+    %newVar32 <- 5
+    %address <- 2
+    %address *= 8
+    %address += 8
+    %address += %a_1
+    %newVar39 <- mem %address 0
+    %newVar31 <- %newVar39
+    %newVar39 >>= 1
+    %newVar33 <- %newVar7
+    %newVar33 <<= 1
+    %newVar33 += 1
+    %newVar40 <- %newVar7 < %newVar39
+    cjump 1 = %newVar40 :new_label24_global_36
+    goto :new_label24_global_14
+    :new_label24_global_36
+    goto :new_label24_global_15
+    :new_label24_global_11
+    mem rsp -8 <- :tensor_error9_ret
+    rdi <- %newVar30
+    call tensor-error 1
+    :tensor_error9_ret
+    :new_label24_global_37
+    mem rsp -8 <- :tensor_error10_ret
+    rdx <- %newVar33
+    rsi <- %newVar31
+    rdi <- %newVar30
+    call tensor-error 3
+    :tensor_error10_ret
+    goto :new_label24_global_14
+    )
+)

@@ -1,0 +1,60 @@
+define void @main () {
+	:loopLONGEST_label_0
+	int64 %c
+	int64 %i
+	int64[] %a
+	int64 %loopLONGEST_LineNumber
+	int64 %loopLONGEST_comp
+	int64 %loopLONGEST_encoded_index
+	int64 %loopLONGEST_length
+	int64 %loopLONGEST_length_decoded
+	int64 %loopLONGESTc
+	int64 %loopLONGESTi
+	%c <- 1
+	%i <- 1
+	%a <- 0
+	%loopLONGEST_LineNumber <- 1
+	%loopLONGEST_comp <- 1
+	%loopLONGEST_encoded_index <- 1
+	%loopLONGEST_length <- 1
+	%loopLONGEST_length_decoded <- 1
+	%loopLONGESTc <- 1
+	%loopLONGESTi <- 1
+	%a <- new Array(21)
+	%i <- 3
+	br :loop
+	:loop
+	%loopLONGESTi <- %i >> 1
+	%loopLONGEST_LineNumber <- 19
+	%loopLONGEST_comp <- %a = 0
+	br %loopLONGEST_comp :loopLONGEST_ERROR_13 :loopLONGEST_CORRECT_13
+	:loopLONGEST_ERROR_13
+	call tensor-error(%loopLONGEST_LineNumber)
+	br :loopLONGEST_CORRECT_13
+	:loopLONGEST_CORRECT_13
+	%loopLONGEST_encoded_index <- %loopLONGESTi << 1
+	%loopLONGEST_encoded_index <- %loopLONGEST_encoded_index + 1
+	%loopLONGEST_length <- length %a 0
+	%loopLONGEST_length_decoded <- %loopLONGEST_length >> 1
+	call print (%loopLONGEST_encoded_index)
+	call print (%loopLONGEST_length)
+	%loopLONGEST_comp <- %loopLONGEST_length_decoded < %loopLONGEST_length_decoded
+	br %loopLONGEST_comp :loopLONGEST_GOOD_19 :loopLONGEST_BAD_19
+	:loopLONGEST_BAD_19
+	call tensor-error(%loopLONGEST_LineNumber,%loopLONGEST_length,%loopLONGEST_encoded_index)
+	br :loopLONGEST_GOOD_19
+	:loopLONGEST_GOOD_19
+	%a[%loopLONGESTi] <- 1999
+	%loopLONGESTi <- %i >> 1
+	%i <- %loopLONGESTi + 1
+	%i <- %i << 1
+	%i <- %i + 1
+	%loopLONGESTi <- %i >> 1
+	%c <- %loopLONGESTi < 999
+	%c <- %c << 1
+	%c <- %c + 1
+	%loopLONGESTc <- %c >> 1
+	br %loopLONGESTc :loop :done
+	:done
+	return
+}

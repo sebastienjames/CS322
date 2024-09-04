@@ -1,0 +1,6 @@
+define @main () {
+    //%callerFP <- @myOtherF
+    %v <- call %callerFP (2)
+    call print(%v)
+    return
+}

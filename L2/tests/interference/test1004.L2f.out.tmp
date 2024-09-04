@@ -1,0 +1,34 @@
+%element Colored none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar0 Colored %newVar7 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar10 Colored %newVar9 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar11 Colored %newVar13 %newVar9 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar12 Colored %newVar13 %newVar9 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar13 Colored %newVar11 %newVar12 %newVar14 %newVar9 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar14 Colored %newVar13 %newVar9 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar15 Colored %newVar8 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar16 Colored %newVar23 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar17 Colored %newVar18 %newVar19 %newVar20 %newVar21 %newVar22 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar18 Colored %newVar17 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar19 Colored %newVar17 %newVar21 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar1 Colored %newVar2 %newVar3 %newVar4 %newVar5 %newVar6 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar20 Colored %newVar17 %newVar21 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar21 Colored %newVar17 %newVar19 %newVar20 %newVar22 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar22 Colored %newVar17 %newVar21 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar23 Colored %newVar16 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar24 Colored %newVar31 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar25 Colored %newVar26 %newVar27 %newVar28 %newVar29 %newVar30 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar26 Colored %newVar25 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar27 Colored %newVar25 %newVar29 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar28 Colored %newVar25 %newVar29 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar29 Colored %newVar25 %newVar27 %newVar28 %newVar30 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar2 Colored %newVar1 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar30 Colored %newVar25 %newVar29 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar31 Colored %newVar24 none r12 r13 r14 r15 rbp rbx with
+%newVar3 Colored %newVar1 %newVar5 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar4 Colored %newVar1 %newVar5 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar5 Colored %newVar1 %newVar3 %newVar4 %newVar6 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar6 Colored %newVar1 %newVar5 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar7 Colored %newVar0 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar8 Colored %newVar15 none %p1 r12 r13 r14 r15 rbp rbx with
+%newVar9 Colored %newVar10 %newVar11 %newVar12 %newVar13 %newVar14 none %p1 r12 r13 r14 r15 rbp rbx with
+%p1 Colored %element %newVar0 %newVar1 %newVar10 %newVar11 %newVar12 %newVar13 %newVar14 %newVar15 %newVar16 %newVar17 %newVar18 %newVar19 %newVar2 %newVar20 %newVar21 %newVar22 %newVar23 %newVar24 %newVar25 %newVar26 %newVar27 %newVar28 %newVar29 %newVar3 %newVar30 %newVar4 %newVar5 %newVar6 %newVar7 %newVar8 %newVar9 none r10 r11 r12 r13 r14 r15 r8 r9 rax rbp rbx rcx rdi rdx rsi with

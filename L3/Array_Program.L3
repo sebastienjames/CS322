@@ -1,0 +1,87 @@
+define @main(){
+  %Size<-call input() 
+  //call print(%Size)
+  %ArrayStart<-call allocate (%Size,0)
+  %i <- 3
+  
+  //Initialize Array
+  :startLoop
+  %Item<-call input()
+  //call print(%Item)
+  %Mult<-%i*8
+  %CurrentPos<-%ArrayStart+%Mult
+  store %CurrentPos <- %Item
+  %print<-load %CurrentPos
+  //call print(%print)
+  %i<-%i+2
+  //call print(%i)
+  %Condition<- %i<=%Size
+  br %Condition :startLoop
+  
+ 
+  //FUCNTION TIME
+  %i <-3
+  :startLoop2
+  call @findSmallest(%ArrayStart,%Size)
+  %i<-%i+2
+  %Condition <- %i <= %Size 
+  br %Condition :startLoop2
+  
+  //rdi<- ％Var24
+  //call print 1
+  //%VarR14 <- mem rsp 16
+  //%VarR13 <- mem rsp 8
+  //%VarR12 <- mem rsp 0
+  return
+}
+
+define @findSmallest(%p1, %p2){
+  %Start<-%p1
+  %Siz<-%p2
+
+  %j <- 3
+  %Smallest <-0 
+  :startLoopToFindSmallest
+
+  %Mult<-%j*8
+  %CurrentPos<-%ArrayStart+%Mult
+  %element <- load %CurrentPos   
+  // If statement
+
+  %Condition1 <- %element=0
+  %Condition2 <- %Smallest=0
+  %Condition3 <- %Smallest<=%element
+  br %Condition1 :goToEnd
+  br %Condition2 :adjustSmallest
+  br %Condition3 :goToEnd
+  :adjustSmallest
+  %Smallest <- %element
+  :goToEnd
+  %j<-%j+2
+  %Condition <- %j <= %Siz 
+  br %Condition :startLoopToFindSmallest
+
+  call print (%Smallest)
+  %j <- 3  
+
+  :startLoopToDestroySmallest
+  %Mult<-%j*8
+  %CurrentPos<-%ArrayStart+%Mult
+  %element <- load %CurrentPos   
+  //If statement
+  %Condition4 <- %element=%Smallest
+  br %Condition4 :foundValueToDestroy
+  br :skipBig
+  :foundValueToDestroy
+  store %CurrentPos <- 0 //LOAD smol
+  //call print(%CurrentPos)
+  return
+  :skipBig
+  %j<-%j+2
+  %Condition <- %j <= %Siz
+  br %Condition :startLoopToDestroySmallest
+ 
+  :break  
+  return
+}
+
